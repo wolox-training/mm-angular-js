@@ -18,19 +18,28 @@
 .book-header {
   align-items: center;
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   margin-bottom: 10px;
 }
 
 .book-item {
   align-items: center;
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   margin: 50px auto;
 }
 
-.book-title {
+.book-title,
+.item-key {
   color: $black;
+}
+
+.book-gender,
+.item-value {
+  color: $grey;
+}
+
+.book-title {
   font-size: 32px;
   font-weight: 700;
   line-height: 38px;
@@ -38,14 +47,12 @@
 }
 
 .book-gender {
-  color: $grey;
   font-size: 24px;
   font-weight: 700;
   line-height: 28px;
 }
 
 .item-key {
-  color: $black;
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
@@ -53,7 +60,6 @@
 }
 
 .item-value {
-  color: $grey;
   font-size: 20px;
   line-height: 24px;
 }
