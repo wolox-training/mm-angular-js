@@ -1,0 +1,67 @@
+%item-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book {
+  align-items: center;
+  background-color: $white;
+  box-shadow: 4px 4px 10px 0 $black-transparent;
+  display: flex;
+  flex-flow: column wrap;
+  height: 100%;
+  margin: 0 auto;
+  max-height: 415px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.book-info {
+  margin: 10px auto;
+}
+
+.book-header {
+  @extend %item-row;
+  margin-bottom: 10px;
+}
+
+.book-item {
+  @extend %item-row;
+  margin: 50px auto;
+}
+
+.book-title,
+.item-key {
+  color: $black;
+}
+
+.book-gender,
+.item-value {
+  color: $grey;
+}
+
+.book-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  margin-right: 5px;
+}
+
+.book-gender {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.item-key {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-right: 5px;
+}
+
+.item-value {
+  font-size: 20px;
+  line-height: 24px;
+}
