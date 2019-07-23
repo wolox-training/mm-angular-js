@@ -1,3 +1,9 @@
+%item-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .book {
   align-items: center;
   background-color: $white;
@@ -16,16 +22,12 @@
 }
 
 .book-header {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
+  @extend %item-row;
   margin-bottom: 10px;
 }
 
 .book-item {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
+  @extend %item-row;
   margin: 50px auto;
 }
 
