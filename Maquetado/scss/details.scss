@@ -1,0 +1,61 @@
+.book {
+  align-items: center;
+  background-color: $white;
+  box-shadow: 4px 4px 10px 0 $black-transparent;
+  display: flex;
+  flex-flow: column wrap;
+  height: 416px;
+  justify-content: flex-start;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.book-info {
+  margin: 10px auto;
+}
+
+.book-header {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  margin: 0 0 10px 0;
+}
+
+.book-item {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  margin: 50px auto;
+}
+
+.book-title {
+  color: $black;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  margin: 0 5px 0 0;
+}
+
+.book-gender {
+  color: $grey;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.item-key {
+  color: $black;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0 5px 0 0;
+}
+
+.item-value {
+  color: $grey;
+  font-size: 20px;
+  line-height: 24px;
+}
+
