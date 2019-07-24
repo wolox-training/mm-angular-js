@@ -13,6 +13,7 @@
   max-height: 415px;
   max-width: 1000px;
   padding: 20px;
+  position: relative;
   width: 100%;
 }
 
@@ -23,7 +24,13 @@
 
 .book-img {
   height: 100%;
+  position: relative;
   width: 260px;
+}
+
+.book-badge {
+  position: absolute;
+  transform: rotate(20deg) scale(0.2) translate(-120px,-1200px);;
 }
 
 .book-header {
