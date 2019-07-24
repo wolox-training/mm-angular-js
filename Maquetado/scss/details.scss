@@ -28,8 +28,11 @@
 }
 
 .book-badge {
+  left: -50px;
   position: absolute;
-  transform: rotate(20deg) scale(0.2) translate(-120px,-1200px);
+  top: 20px;
+  transform: rotate(20deg) scale(0.2);
+  transform-origin: top right;
 }
 
 .book-header {
