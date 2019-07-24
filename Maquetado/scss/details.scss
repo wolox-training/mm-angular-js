@@ -4,10 +4,14 @@
   flex-wrap: wrap;
 }
 
+%shadow {
+  box-shadow: 4px 4px 10px 0 $black-transparent;
+}
+
 .book {
   background-color: $white;
-  box-shadow: 4px 4px 10px 0 $black-transparent;
   display: flex;
+  @extend %shadow;
   flex-wrap: wrap;
   margin: 0 auto;
   max-height: 415px;
@@ -77,4 +81,44 @@
 .item-value {
   font-size: 20px;
   line-height: 24px;
+}
+
+.background {
+  background-color: $wild-sand;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.list-book {
+  background-color: $white;
+  display: flex;
+  @extend %shadow;
+  flex-flow: column wrap;
+  margin: 20px;
+  padding: 25px;
+}
+
+.list-book-img {
+  height: 200px;
+  width: 140px;
+}
+
+.list-book-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  margin-top: 10px;
+}
+
+.list-book-author {
+  color: $grey;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 5px;
 }
