@@ -26,6 +26,12 @@
   width: 260px;
 }
 
+.book-badge {
+  margin: -240px 0 0 60px;
+  position: absolute;
+  transform: rotate(20deg) scale(0.2);
+}
+
 .book-header {
   border-bottom: 4px solid $earls-green;
   @extend %item-row;
