@@ -8,13 +8,13 @@
   box-shadow: 4px 4px 10px 0 $black-transparent;
 }
 
-@mixin texto($size,$weight,$height) {
+@mixin text-format($size,$weight,$height) {
   font-size: $size;
   font-weight: $weight;
   line-height: $height;
 }
 
-.background {
+.books-container {
   background-color: $wild-sand;
   height: 100%;
   width: 100%;
@@ -71,16 +71,16 @@
 }
 
 .book-title {
-  @include texto(32px, 700, 38px);
+  @include text-format(32px, 700, 38px);
   margin-right: 5px;
 }
 
 .book-gender {
-  @include texto(24px, 700, 28px);
+  @include text-format(24px, 700, 28px);
 }
 
 .item-key {
-  @include texto(20px, 700, 24px);
+  @include text-format(20px, 700, 24px);
   margin-right: 5px;
 }
 
@@ -112,7 +112,7 @@
 }
 
 .list-book-title {
-  @include texto(16px, 700, 18px);
+  @include text-format(16px, 700, 18px);
   margin-top: 10px;
 }
 
