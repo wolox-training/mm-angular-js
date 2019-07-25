@@ -14,36 +14,6 @@
   line-height: $height;
 }
 
-.header {
-  background-color: $white;
-  border-top: 5px solid $cerulean;
-  @include shadow;
-  left: 0;
-  margin: auto;
-  position: sticky;
-  top: 0;
-  width: 100%;
-}
-
-.nav {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  height: 80px;
-  justify-content: space-evenly;
-  max-height: 100%;
-  position: sticky;
-}
-
-.nav-logo {
-  max-height: 70px;
-}
-
-.nav-logout {
-  font-size: 18px;
-  line-height: 21px;
-}
-
 .background {
   background-color: $wild-sand;
   height: 100%;
