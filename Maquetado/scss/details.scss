@@ -4,15 +4,27 @@
   flex-wrap: wrap;
 }
 
-%shadow {
+@mixin shadow {
   box-shadow: 4px 4px 10px 0 $black-transparent;
+}
+
+@mixin texto($size,$weight,$height) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+}
+
+.background {
+  background-color: $wild-sand;
+  height: 100%;
+  width: 100%;
 }
 
 .book {
   background-color: $white;
   display: flex;
-  @extend %shadow;
   flex-wrap: wrap;
+  @include shadow;
   margin: 0 auto;
   max-height: 415px;
   max-width: 1000px;
@@ -59,32 +71,22 @@
 }
 
 .book-title {
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 38px;
+  @include texto(32px, 700, 38px);
   margin-right: 5px;
 }
 
 .book-gender {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 28px;
+  @include texto(24px, 700, 28px);
 }
 
 .item-key {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 24px;
+  @include texto(20px, 700, 24px);
   margin-right: 5px;
 }
 
 .item-value {
   font-size: 20px;
   line-height: 24px;
-}
-
-.background {
-  background-color: $wild-sand;
 }
 
 .list {
@@ -98,8 +100,8 @@
 .list-book {
   background-color: $white;
   display: flex;
-  @extend %shadow;
   flex-flow: column wrap;
+  @include shadow;
   margin: 20px;
   padding: 25px;
 }
@@ -110,9 +112,7 @@
 }
 
 .list-book-title {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 18px;
+  @include texto(16px, 700, 18px);
   margin-top: 10px;
 }
 
