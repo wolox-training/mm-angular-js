@@ -20,12 +20,23 @@
   width: 100%;
 }
 
+.back-button {
+  font-size: 20px;
+  line-height: 24px;
+  margin: 50px 30px;
+}
+
+.back-button::before {
+  content: url('assets/back-arrow-20.png');
+  padding: 10px;
+  vertical-align: middle;
+}
 .book {
   background-color: $white;
   display: flex;
   flex-wrap: wrap;
   @include shadow;
-  margin: 0 auto;
+  margin: 50px auto;
   max-height: 415px;
   max-width: 1000px;
   padding: 20px;
