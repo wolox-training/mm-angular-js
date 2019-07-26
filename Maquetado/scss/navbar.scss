@@ -3,7 +3,7 @@
   background-color: $white;
   border-top: 5px solid $cerulean;
   display: flex;
-  height: 80px;
+  height: $nav_height;
   @include shadow;
   justify-content: space-evenly;
   margin: 0 auto;
