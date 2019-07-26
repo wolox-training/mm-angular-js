@@ -1,5 +1,5 @@
-@mixin border-top-cerulean {
-  border-top: 7px solid $cerulean;
+@mixin border-top ($color) {
+  border-top: 7px solid $color;
 }
 
 .nav {
@@ -8,7 +8,7 @@
   display: flex;
   height: 80px;
   height: $nav_height;
-  @include border-top-cerulean();
+  @include border-top($cerulean);
   @include shadow;
   justify-content: space-evenly;
   margin: 0 auto;

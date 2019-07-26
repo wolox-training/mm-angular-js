@@ -15,14 +15,14 @@
   background-color: $wild-sand;
   display: flex;
   flex-direction: column;
-  height: 400px;
-  @include border-top-cerulean();
+  @include border-top($cerulean);
   justify-content: space-between;
   margin: 0 auto;
+  max-height: 400px;
+  max-width: 300px;
   padding: 25px;
   position: relative;
   top: 180px;
-  width: 300px;
 }
 
 .login-box-logo {
@@ -46,14 +46,14 @@
   @include login-item(5px 0);
 }
 
-.login-box-btn-log {
+.btn-login {
   background-color: $earls-green;
   color: $white;
   height: 30px;
   @include login-item(0 0 15px 0);
 }
 
-.login-box-btn-sign {
+.btn-sign-up {
   border: 2px solid  $earls-green;
   color: $earls-green;
   height: 30px;
