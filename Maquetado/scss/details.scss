@@ -142,3 +142,33 @@
   line-height: #{$line_height -2};
   margin-top: 5px;
 }
+
+@media only screen and (max-width: 1024px) {
+  .book-img {
+    height: 100%;
+    width: 200px;
+  }
+  .book-badge {
+    left: -50px;
+    position: absolute;
+    top: 20px;
+    transform: rotate(20deg) scale(calc(0.2*70%));
+    transform-origin: top right;
+  }
+  .book {
+    align-items: center;
+    flex-direction: column;
+    max-height: 80%;
+    max-width: 80%;
+  }
+  .background {
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100%;
+  }
+
+  .back-button {
+    margin: 0 auto;
+  }
+}
