@@ -23,7 +23,6 @@
 .book {
   background-color: $white;
   display: flex;
-  flex-wrap: wrap;
   @include shadow;
   margin: 0 auto;
   max-height: 415px;
@@ -35,7 +34,7 @@
 
 .book-info {
   margin: 0 50px;
-  width: 600px;
+  width: 100%;
 }
 
 .book-img {
@@ -44,8 +43,11 @@
 }
 
 .book-badge {
+  left: -50px;
   position: absolute;
-  transform: rotate(20deg) scale(0.2) translate(-120px,-1200px);
+  top: 20px;
+  transform: rotate(20deg) scale(0.2);
+  transform-origin: top right;
 }
 
 .book-header {
