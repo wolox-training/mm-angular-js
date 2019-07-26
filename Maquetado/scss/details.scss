@@ -5,7 +5,7 @@
 }
 
 @mixin shadow {
-  box-shadow: 4px 4px 10px 0 $black-transparent;
+  box-shadow: 4px 4px 10px $black-transparent;
 }
 
 @mixin text-format($size,$weight,$height) {
@@ -23,7 +23,6 @@
 .book {
   background-color: $white;
   display: flex;
-  flex-wrap: wrap;
   @include shadow;
   margin: 0 auto;
   max-height: 415px;
@@ -35,7 +34,7 @@
 
 .book-info {
   margin: 0 50px;
-  width: 600px;
+  width: 100%;
 }
 
 .book-img {
@@ -44,8 +43,11 @@
 }
 
 .book-badge {
+  left: -50px;
   position: absolute;
-  transform: rotate(20deg) scale(0.2) translate(-120px,-1200px);
+  top: 20px;
+  transform: rotate(20deg) scale(0.2);
+  transform-origin: top right;
 }
 
 .book-header {
@@ -71,22 +73,22 @@
 }
 
 .book-title {
-  @include text-format(32px, 700, 38px);
+  @include text-format(#{$font_size + 12}, $font-weight, #{$line_height + 18});
   margin-right: 5px;
 }
 
 .book-gender {
-  @include text-format(24px, 700, 28px);
+  @include text-format(#{$font_size + 4}, $font-weight, #{$line_height + 8});
 }
 
 .item-key {
-  @include text-format(20px, 700, 24px);
+  @include text-format($font_size, $font-weight, $line_height);
   margin-right: 5px;
 }
 
 .item-value {
-  font-size: 20px;
-  line-height: 24px;
+  font-size: $font_size;
+  line-height: #{$line_height + 4};
 }
 
 .list {
@@ -95,6 +97,7 @@
   justify-content: center;
   margin: 0 auto;
   max-width: 1000px;
+  width: 100%;
 }
 
 .list-book {
@@ -112,13 +115,13 @@
 }
 
 .list-book-title {
-  @include text-format(16px, 700, 18px);
+  @include text-format(#{$font_size - 4}, $font-weight, #{$line_height - 2});
   margin-top: 10px;
 }
 
 .list-book-author {
   color: $grey;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: #{$font_size - 6};
+  line-height: #{$line_height -2};
   margin-top: 5px;
 }
