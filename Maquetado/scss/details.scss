@@ -24,18 +24,18 @@
   font-size: 20px;
   line-height: 24px;
   margin: 50px 30px;
+  &:before {
+    content: url('assets/back-arrow-20.png');
+    padding: 10px;
+    vertical-align: middle;
+  }
 }
 
-.back-button::before {
-  content: url('assets/back-arrow-20.png');
-  padding: 10px;
-  vertical-align: middle;
-}
+
 
 .book {
   background-color: $white;
   display: flex;
-  flex-wrap: wrap;
   @include shadow;
   margin: 50px auto;
   max-height: 415px;
@@ -47,7 +47,7 @@
 
 .book-info {
   margin: 0 50px;
-  width: 600px;
+  width: 100%;
 }
 
 .book-img {
@@ -56,8 +56,11 @@
 }
 
 .book-badge {
+  left: -50px;
   position: absolute;
-  transform: rotate(20deg) scale(0.2) translate(-120px,-1200px);
+  top: 20px;
+  transform: rotate(20deg) scale(0.2);
+  transform-origin: top right;
 }
 
 .book-header {
