@@ -1,10 +1,14 @@
+@mixin border-top-cerulean {
+  border-top: 7px solid $cerulean;
+}
+
 .nav {
   align-items: center;
   background-color: $white;
-  border-top: 5px solid $cerulean;
   display: flex;
   flex-wrap: wrap;
   height: 80px;
+  @include border-top-cerulean();
   @include shadow;
   justify-content: space-evenly;
   margin: auto;
