@@ -3,17 +3,16 @@
   background-color: $white;
   border-top: 5px solid $cerulean;
   display: flex;
-  flex-wrap: wrap;
   height: 80px;
   @include shadow;
   justify-content: space-evenly;
-  margin: auto;
+  margin: 0 auto;
   max-height: 100%;
   position: sticky;
 }
 
 .nav-logo {
-  max-height: 70px;
+  height: 70px;
 }
 
 .nav-logout {
