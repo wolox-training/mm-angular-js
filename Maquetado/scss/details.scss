@@ -144,10 +144,18 @@
 }
 
 @media only screen and (max-width: 1024px) {
+  .book {
+    align-items: center;
+    flex-direction: column;
+    max-height: 80%;
+    max-width: 80%;
+  }
+
   .book-img {
     height: 100%;
     width: 200px;
   }
+
   .book-badge {
     left: -50px;
     position: absolute;
@@ -155,12 +163,11 @@
     transform: rotate(20deg) scale(calc(0.2*70%));
     transform-origin: top right;
   }
-  .book {
-    align-items: center;
-    flex-direction: column;
-    max-height: 80%;
-    max-width: 80%;
+
+  .book-info {
+    margin-top: 20px;
   }
+
   .background {
     align-items: center;
     display: flex;
