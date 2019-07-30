@@ -90,22 +90,22 @@
 }
 
 .book-title {
-  @include text-format(#{$font_size + 12}, $font-weight, #{$line_height + 18});
+  @include text-format(#{$big-font-size + 12}, $font-weight, #{$line-height-base + 18});
   margin-right: 5px;
 }
 
 .book-gender {
-  @include text-format(#{$font_size + 4}, $font-weight, #{$line_height + 8});
+  @include text-format(#{$big-font-size + 4}, $font-weight, #{$line-height-base + 8});
 }
 
 .item-key {
-  @include text-format($font_size, $font-weight, $line_height);
+  @include text-format($big-font-size, $font-weight, $line-height-base);
   margin-right: 5px;
 }
 
 .item-value {
-  font-size: $font_size;
-  line-height: #{$line_height + 4};
+  font-size: $big-font-size;
+  line-height: #{$line-height-base + 4};
 }
 
 .list {
@@ -132,13 +132,13 @@
 }
 
 .list-book-title {
-  @include text-format(#{$font_size - 4}, $font-weight, #{$line_height - 2});
+  @include text-format(#{$big-font-size - 4}, $font-weight, #{$line-height-base - 2});
   margin-top: 10px;
 }
 
 .list-book-author {
   color: $grey;
-  font-size: #{$font_size - 6};
-  line-height: #{$line_height -2};
+  font-size: #{$big-font-size - 6};
+  line-height: #{$line-height-base -2};
   margin-top: 5px;
 }
