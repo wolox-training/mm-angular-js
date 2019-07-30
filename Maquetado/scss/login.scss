@@ -6,8 +6,8 @@
 
 %login-text {
   border-radius: 5px;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: #{$big-font-size - 4};
+  line-height: #{$line-height-base + 4};
 }
 
 .login-box {
@@ -15,14 +15,15 @@
   background-color: $wild-sand;
   display: flex;
   flex-direction: column;
+  height: 400px;
   @include border-top($cerulean);
   justify-content: space-between;
   margin: 0 auto;
-  max-height: 400px;
   max-width: 300px;
   padding: 25px;
   position: relative;
   top: 180px;
+  width: 100%;
 }
 
 .login-box-logo {
@@ -54,7 +55,7 @@
 }
 
 .btn-sign-up {
-  border: 2px solid  $earls-green;
+  border: 2px solid $earls-green;
   color: $earls-green;
   height: 30px;
   @include login-item(15px 0 0 0);
