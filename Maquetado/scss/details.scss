@@ -20,28 +20,11 @@
   width: 100%;
 }
 
-.back-button {
-  font-size: 20px;
-  line-height: 24px;
-  margin: 50px 30px;
-  &:before {
-    content: url('assets/back-arrow-20.png');
-    padding: 10px;
-    vertical-align: middle;
-  }
-}
-
-.background {
-  background-color: $wild-sand;
-  height: 100%;
-  width: 100%;
-}
-
 .book {
   background-color: $white;
   display: flex;
   @include shadow;
-  margin: 50px auto;
+  margin: 0 auto;
   max-height: 415px;
   max-width: 1000px;
   padding: 20px;
@@ -90,22 +73,22 @@
 }
 
 .book-title {
-  @include text-format(#{$font-size + 12}, $font-weight, #{$line-height + 18});
+  @include text-format(#{$font_size + 12}, $font-weight, #{$line_height + 18});
   margin-right: 5px;
 }
 
 .book-gender {
-  @include text-format(#{$font-size + 4}, $font-weight, #{$line-height + 8});
+  @include text-format(#{$font_size + 4}, $font-weight, #{$line_height + 8});
 }
 
 .item-key {
-  @include text-format($font-size, $font-weight, $line-height);
+  @include text-format($font_size, $font-weight, $line_height);
   margin-right: 5px;
 }
 
 .item-value {
-  font-size: $font-size;
-  line-height: #{$line-height + 4};
+  font-size: $font_size;
+  line-height: #{$line_height + 4};
 }
 
 .list {
@@ -132,50 +115,13 @@
 }
 
 .list-book-title {
-  @include text-format(#{$font-size - 4}, $font-weight, #{$line-height - 2});
+  @include text-format(#{$font_size - 4}, $font-weight, #{$line_height - 2});
   margin-top: 10px;
 }
 
 .list-book-author {
   color: $grey;
-  font-size: #{$font-size - 6};
-  line-height: #{$line-height -2};
+  font-size: #{$font_size - 6};
+  line-height: #{$line_height -2};
   margin-top: 5px;
-}
-
-@media only screen and (max-width: 1024px) {
-  .book {
-    align-items: center;
-    flex-direction: column;
-    max-height: 80%;
-    max-width: 80%;
-  }
-
-  .book-img {
-    height: 100%;
-    width: 200px;
-  }
-
-  .book-badge {
-    left: -50px;
-    position: absolute;
-    top: 20px;
-    transform: rotate(20deg) scale(calc(0.2*70%));
-    transform-origin: top right;
-  }
-
-  .book-info {
-    margin-top: 20px;
-  }
-
-  .background {
-    align-items: center;
-    display: flex;
-    flex-direction: column-reverse;
-    height: 100%;
-  }
-
-  .back-button {
-    margin: 0 auto;
-  }
 }
