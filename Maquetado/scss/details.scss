@@ -20,12 +20,15 @@
 }
 
 .back-button {
+  align-self: end;
   font-size: 20px;
+  grid-area: backimg;
+  justify-self: end;
   line-height: 24px;
-  margin: 50px 30px;
 
   &:before {
     content: url('assets/back-arrow-20.png');
+    grid-area: backtext;
     padding: 10px;
     vertical-align: middle;
   }
@@ -38,32 +41,42 @@
 }
 
 .container-book {
-  display: flex;
+  display: grid;
+  grid-template: 10% 500px/10% auto 10%;
+  grid-template-areas: 'backimg backtext .'
+  '. book .'
+  '. book .';
 }
 
 .book {
   background-color: $white;
-  display: flex;
+  display: grid;
+  grid-area: book;
+  grid-template: 50px 50px auto/ 1fr 2fr;
+  grid-template-areas: 'title title'
+  'gender gender'
+  'img info';
   @include shadow;
-  margin: 50px auto;
-  max-height: 415px;
   max-width: 1000px;
   padding: 20px;
+  place-self: center;
   position: relative;
   width: 100%;
 }
 
 .book-info {
-  margin: 0 50px;
+  grid-area: info;
   width: 100%;
 }
 
 .book-img {
-  height: 100%;
+  grid-area: img;
+  height: 370px;
   width: 260px;
 }
 
 .book-badge {
+  grid-area: img;
   left: -50px;
   position: absolute;
   top: 20px;
@@ -94,12 +107,18 @@
 }
 
 .book-title {
+  align-self: end;
+  grid-area: title;
   @include text-format(#{$big-font-size + 12}, $font-weight, #{$line-height-base + 18});
+  justify-self: center;
   margin-right: 5px;
 }
 
 .book-gender {
+  align-self: start;
+  grid-area: gender;
   @include text-format(#{$big-font-size + 4}, $font-weight, #{$line-height-base + 8});
+  justify-self: center;
 }
 
 .item-key {
