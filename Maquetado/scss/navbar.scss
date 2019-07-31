@@ -1,9 +1,14 @@
+@mixin border-top ($color) {
+  border-top: 7px solid $color;
+}
+
 .nav {
   align-items: center;
   background-color: $white;
-  border-top: 5px solid $cerulean;
   display: flex;
+  height: 80px;
   height: $nav-height;
+  @include border-top($cerulean);
   @include shadow;
   justify-content: space-evenly;
   margin: 0 auto;
