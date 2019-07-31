@@ -128,10 +128,10 @@
   @include shadow;
   margin: 20px;
   padding: 25px;
-  transition: transform 1s;
+  transition: transform 500ms;
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale($list-transform-scale);
   }
 }
 
