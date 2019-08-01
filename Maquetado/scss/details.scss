@@ -8,6 +8,19 @@
   box-shadow: 4px 4px 10px $black-transparent;
 }
 
+%list-book {
+  background-color: $white;
+  display: flex;
+  flex-flow: column wrap;
+  @include shadow;
+  padding: 10px;
+  transition: transform 500ms;
+
+  &:hover {
+    transform: scale($list-transform-scale);
+  }
+}
+
 @mixin text-format($size,$weight,$height) {
   font-size: $size;
   font-weight: $weight;
@@ -124,26 +137,52 @@
 }
 
 .list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-gap: 50px;
+  grid-template: repeat(2, 275px) / repeat(4,165px);
+  grid-template-areas: 'a''b''c''d''e''f''g''h';
   justify-content: center;
-  margin: 0 auto;
-  max-width: 1000px;
-  width: 100%;
+  margin: 20px auto;
 }
 
-.list-book {
-  background-color: $white;
-  display: flex;
-  flex-flow: column wrap;
-  @include shadow;
-  margin: 20px;
-  padding: 25px;
-  transition: transform 500ms;
+.list-book-a {
+  @extend %list-book;
+  grid-area: a;
+}
 
-  &:hover {
-    transform: scale($list-transform-scale);
-  }
+.list-book-b {
+  @extend %list-book;
+  grid-area: b;
+}
+
+.list-book-c {
+  @extend %list-book;
+  grid-area: c;
+}
+
+.list-book-d {
+  @extend %list-book;
+  grid-area: d;
+}
+
+.list-book-e {
+  @extend %list-book;
+  grid-area: e;
+}
+
+.list-book-f {
+  @extend %list-book;
+  grid-area: f;
+}
+
+.list-book-g {
+  @extend %list-book;
+  grid-area: g;
+}
+
+.list-book-h {
+  @extend %list-book;
+  grid-area: h;
 }
 
 .list-book-img {
