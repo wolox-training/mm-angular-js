@@ -2,6 +2,18 @@
   border-top: 7px solid $color;
 }
 
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+  }
+  75% {
+    margin-left: -100px;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
 .nav {
   align-items: center;
   background-color: $white;
@@ -12,12 +24,14 @@
   @include shadow;
   justify-content: space-evenly;
   margin: 0 auto;
-  max-height: 100%;
-  position: sticky;
 }
 
 .nav-logo {
+  animation-duration: 3s;
+  animation-name: slidein;
   height: 70px;
+  max-height: 100%;
+  position: sticky;
 }
 
 .nav-logout {
