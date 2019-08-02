@@ -128,6 +128,11 @@
   @include shadow;
   margin: 20px;
   padding: 25px;
+  transition: transform 500ms;
+
+  &:hover {
+    transform: scale($list-transform-scale);
+  }
 }
 
 .list-book-img {
