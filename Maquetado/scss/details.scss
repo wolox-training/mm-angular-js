@@ -133,36 +133,10 @@
 }
 
 .list-item {
-  &:nth-child(1) {
-    grid-area: a;
-  }
-
-  &:nth-child(2) {
-    grid-area: b;
-  }
-
-  &:nth-child(3) {
-    grid-area: c;
-  }
-
-  &:nth-child(4) {
-    grid-area: d;
-  }
-
-  &:nth-child(5) {
-    grid-area: e;
-  }
-
-  &:nth-child(6) {
-    grid-area: f;
-  }
-
-  &:nth-child(7) {
-    grid-area: g;
-  }
-
-  &:nth-child(8) {
-    grid-area: h;
+  @for $i from 1 through 8 {
+    &:nth-child(#{$i}) {
+      grid-area: nth($list-areas, $i);
+    }
   }
 }
 
