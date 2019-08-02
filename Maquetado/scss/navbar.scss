@@ -27,11 +27,8 @@
 }
 
 .nav-logo {
-  animation-duration: 3s;
-  animation-name: slidein;
+  animation: slidein 3s;
   height: 70px;
-  max-height: 100%;
-  position: sticky;
 }
 
 .nav-logout {
