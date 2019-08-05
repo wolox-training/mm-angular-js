@@ -126,18 +126,9 @@
 .list {
   display: grid;
   grid-gap: 50px;
-  grid-template: repeat(2, 275px) / repeat(4,165px);
-  grid-template-areas: 'a b c d''e f g h';
+  grid-template-columns: repeat(4,165px);
   justify-content: center;
   margin: 20px auto;
-}
-
-.list-item {
-  @for $i from 1 through 8 {
-    &:nth-child(#{$i}) {
-      grid-area: nth($list-areas, $i);
-    }
-  }
 }
 
 .list-book {
