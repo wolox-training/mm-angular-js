@@ -2,6 +2,18 @@
   border-top: 7px solid $color;
 }
 
+@keyframes slidein {
+  from {
+    transform: translateX(100%);
+  }
+  75% {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .nav {
   align-items: center;
   background-color: $white;
@@ -12,11 +24,10 @@
   @include shadow;
   justify-content: space-evenly;
   margin: 0 auto;
-  max-height: 100%;
-  position: sticky;
 }
 
 .nav-logo {
+  animation: slidein 3s;
   height: 70px;
 }
 
