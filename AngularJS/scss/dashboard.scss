@@ -1,0 +1,61 @@
+@mixin book-text($color, $fontSize) {
+  color: $color;
+  font-size: $fontSize;
+  line-height: $line-height-base;
+}
+
+%robotoRegular {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+}
+
+%robotoItalic {
+  @extend %robotoRegular;
+  font-style: italic;
+}
+
+%robotoBold {
+  @extend %robotoRegular;
+  font-weight: 700;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+.book-search {
+  margin: 20px 0;
+}
+
+.book-list {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(4,150px);
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.book {
+  padding: 10px;
+}
+
+.book-cover {
+  background: $alto url('assets/default_book.svg') no-repeat center ;
+  height: $book-height;
+  width: $book-width;
+}
+
+.book-title {
+  @extend %robotoBold;
+  font-family: Roboto-bold;
+  @include book-text($black, $tiny-font-size);
+}
+
+.book-author {
+  @extend %robotoRegular;
+  @include book-text($tundora, #{$tiny-font-size - 2});
+}

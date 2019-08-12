@@ -1,0 +1,46 @@
+@keyframes slidein {
+  from {
+    transform: translateX(100%);
+  }
+  75% {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.nav {
+  align-items: center;
+  background-color: $white;
+  box-shadow: 4px 4px 10px $black-transparent;
+  display: flex;
+  height: $nav-height;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.nav-logo {
+  animation: slidein 1s;
+  margin: 20px 30px;
+  width: 170px;
+}
+
+.nav-items {
+  align-items: center;
+  display: flex;
+  justify-self: flex-end;
+}
+
+.nav-item {
+  height: 30px;
+  margin: 0 15px;
+  width: 30px;
+}
+
+.nav-avatar {
+  height: 40px;
+  margin: 0 15px;
+  width: 40px;
+}

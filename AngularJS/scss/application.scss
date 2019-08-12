@@ -1,0 +1,15 @@
+@import 'equalizer';
+@import 'colors';
+@import 'variables';
+@import 'navbar';
+@import 'dashboard';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap');
+
+* {
+  font-family: 'Roboto', serif, 400;
+}
+
+html,
+body {
+  height: 100%;
+}
