@@ -1,4 +1,4 @@
-var cont=app.controller('dashboardController', ['$scope', function($scope) {
+const cont = app.controller('dashboardController', ['$scope', function($scope) {
   this.filter = '';
   this.filterType = '';
   this.refreshBooks = function(){

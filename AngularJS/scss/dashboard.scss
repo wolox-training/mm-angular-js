@@ -17,6 +17,7 @@
 
 %robotoBold {
   @extend %robotoRegular;
+  font-family: Roboto-bold;
   font-weight: 700;
 }
 
@@ -34,7 +35,7 @@
 }
 
 .search-input {
-  background-color: $wild-sand ;
+  background-color: $wild-sand;
   @extend %robotoItalic;
   height: 40px;
   margin: 10px 0 10px 15px;
@@ -43,7 +44,7 @@
 }
 
 .search-img {
-  background: $atlantis url('assets/search.svg') no-repeat center ;
+  background: $atlantis url('assets/search.svg') no-repeat center;
   height: 40px;
   width: 40px;
 }
@@ -76,14 +77,13 @@
 }
 
 .book-cover {
-  background: $alto url('assets/default_book.svg') no-repeat center ;
+  background: $alto url('assets/default_book.svg') no-repeat center;
   height: $book-height;
   width: $book-width;
 }
 
 .book-title {
   @extend %robotoBold;
-  font-family: Roboto-bold;
   @include book-text($black, $tiny-font-size);
 }
 
