@@ -28,7 +28,39 @@
 }
 
 .book-search {
+  align-items: center;
+  display: flex;
   margin: 20px 0;
+}
+
+.search-input {
+  background-color: $wild-sand ;
+  @extend %robotoItalic;
+  height: 40px;
+  margin: 10px 0 10px 15px;
+  padding: 10px;
+  width: 240px;
+}
+
+.search-img {
+  background: $atlantis url('assets/search.svg') no-repeat center ;
+  height: 40px;
+  width: 40px;
+}
+
+.custom-select {
+  background-image: linear-gradient(45deg, transparent 50%, $dusty-gray 50%),
+  linear-gradient(135deg, $dusty-gray 50%, transparent 50%),
+  linear-gradient(to right, $wild-sand, $wild-sand);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+  calc(100% - 15px) calc(1em + 2px),
+  100% 0;
+  background-repeat: no-repeat;
+  background-size: 5px 5px,
+  5px 5px,
+  2.5em 2.5em;
+  @extend .search-input;
+  @include book-text($dusty-gray, $tiny-font-size);
 }
 
 .book-list {

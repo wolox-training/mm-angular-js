@@ -1,4 +1,6 @@
 var cont=app.controller('dashboardController', ['$scope', function($scope) {
+  $scope.query = {}
+  $scope.queryBy = '$'
   $scope.books = [
     {
        "id":1,
@@ -82,4 +84,5 @@ var cont=app.controller('dashboardController', ['$scope', function($scope) {
        "image_url":"http://wolox-training.s3.amazonaws.com/uploads/41DNuJfahyL._SX322_BO1_204_203_200_.jpg"
     }
  ];
+ $scope.orderProp="title"
 }]);
