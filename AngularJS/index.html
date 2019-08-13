@@ -20,16 +20,16 @@
   </nav>
   <div class="container" ng-controller="dashboardController">
     <div class="book-search">
-      <select class="custom-select" >
-        <option value="">Seleccionar filtro</option>
+      <select ng-model="queryBy" class="custom-select" >
+        <option value="$">Seleccionar filtro</option>
         <option value="title">Nombre</option>
         <option value="author">Autor</option>
       </select>
-      <input class="search-input" placeholder="Buscar..."/>
+      <input class="search-input" ng-model="query[queryBy]" placeholder="Buscar..."/>
       <button class="search-img"></button>
     </div>
     <div class="book-list" >
-      <div class="book" ng-repeat="book in books | filter:filterBooks">
+      <div class="book" ng-repeat="book in books | filter:query">
         <img class="book-cover" ng-src="{{book.image_url}}">
         <span class="book-title">{{book.title}}</span>
         <span class="book-author">{{book.author}}</span>
