@@ -1,7 +1,7 @@
 const cont = app.controller('dashboardController', ['$scope', function($scope) {
-  this.filter = '';
+  this.filterValue = '';
   this.filterType = '';
-  this.refreshBooks = function(){
+  this.refreshBooks = function() {
     this.filteredBooks = this.books.filter(e=>(e[this.filterType].includes(this.filter)));
   };
   this.books = [
@@ -87,5 +87,5 @@ const cont = app.controller('dashboardController', ['$scope', function($scope) {
        "image_url":"http://wolox-training.s3.amazonaws.com/uploads/41DNuJfahyL._SX322_BO1_204_203_200_.jpg"
     }
  ];
- this.filteredBooks=this.books;
+ this.filteredBooks = this.books;
 }]);
