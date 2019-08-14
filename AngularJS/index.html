@@ -19,10 +19,31 @@
       <img class="nav-avatar" src="assets/avatar.png" alt="avatar">
     </div>
   </nav>
+<<<<<<< HEAD
 
   <a ui-sref="dashboard" ui-sref-active="active">Hello</a>
   <a ui-sref="bookDetails" ui-sref-active="active">About</a>
    <ui-view></ui-view>
+=======
+  <div class="container" ng-controller="dashboardCtrl as dbc">
+    <form class="book-search" ng-submit="dbc.refreshBooks()">
+      <select ng-model="dbc.filterType" class="custom-select" >
+        <option value="">Seleccionar filtro</option>
+        <option value="title">Nombre</option>
+        <option value="author">Autor</option>
+      </select>
+      <input class="search-input" ng-model="dbc.filterValue" placeholder="Buscar..."/>
+      <button type="submit" class="search-img"></button>
+    </form>
+    <div class="book-list" >
+      <div class="book" ng-repeat="book in dbc.filteredBooks">
+        <img class="book-cover" ng-src="{{book.image_url}}">
+        <span class="book-title">{{book.title}}</span>
+        <span class="book-author">{{book.author}}</span>
+      </div>
+    </div>
+  </div>
+>>>>>>> dbb036d20a508287551daedd3cbc84325dcb6b93
 </body>
 <!--Scripts -->
 <script src="js/app.js"></script>
