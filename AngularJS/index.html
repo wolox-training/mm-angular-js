@@ -19,7 +19,7 @@
     </div>
   </nav>
   <div class="container" ng-controller="dashboardCtrl as dbc">
-    <form class="book-search" ng-submit="dbc.refreshBooks()">
+    <form class="book-search" ng-submit="dbc.filterBooks()">
       <select ng-model="dbc.filterType" class="custom-select" >
         <option value="">Seleccionar filtro</option>
         <option value="title">Nombre</option>
