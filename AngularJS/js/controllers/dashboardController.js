@@ -1,7 +1,7 @@
 const cont = app.controller('dashboardController', ['$scope', function($scope) {
-  this.filter = '';
+  this.filterValue = '';
   this.filterType = '';
-  this.refreshBooks = function(){
+  this.refreshBooks = function() {
     this.filteredBooks = this.books.filter(e=>(e[this.filterType].includes(this.filter)));
   };
   this.books = [

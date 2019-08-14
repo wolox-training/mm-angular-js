@@ -1,0 +1,18 @@
+<div class="container" ng-controller="dashboardController as dbc">
+  <form class="book-search" ng-submit="dbc.refreshBooks()">
+    <select ng-model="dbc.filterType" class="custom-select">
+      <option value="">Seleccionar filtro</option>
+      <option value="title">Nombre</option>
+      <option value="author">Autor</option>
+    </select>
+    <input class="search-input" ng-model="dbc.filter" placeholder="Buscar..." />
+    <button type="submit" class="search-img"></button>
+  </form>
+  <div class="book-list">
+    <div class="book" ng-repeat="book in dbc.filteredBooks">
+      <img class="book-cover" ng-src="{{book.image_url}}">
+      <span class="book-title">{{book.title}}</span>
+      <span class="book-author">{{book.author}}</span>
+    </div>
+  </div>
+</div>
