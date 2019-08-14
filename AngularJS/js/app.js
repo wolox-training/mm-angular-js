@@ -1,16 +1,16 @@
-var app = angular.module('wbooks',[]);
+var app = angular.module('wbooks',['ui.router']);
 
 app.config(function($stateProvider) {
   var dashboard = {
     name: 'dashboard',
     url: '/dashboard',
-    template: 'pages/dashboard.html'
+    templateUrl: 'pages/dashboard.html'
   }
 
   var bookDetails = {
     name: 'bookDetails',
-    url: '/details/{index}',
-    template: 'pages/details.html'
+    url: '/details',
+    templateUrl: 'pages/details.html'
   }
 
   $stateProvider.state(dashboard);
