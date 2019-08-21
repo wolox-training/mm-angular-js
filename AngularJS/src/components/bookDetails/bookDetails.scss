@@ -24,14 +24,16 @@
 }
 
 .details-book-img {
+  background: $alto url('../assets/default_book.svg') no-repeat center;
   grid-area: img;
+  height: 280px;
   justify-self: center;
   width: 190px;
 }
 
 .details-book-title {
   @extend %robotoBold;
-  @include book-text($black, #{$tiny-font-size+6});
+  @include book-text($black, #{$tiny-font-size + 6});
 }
 
 .details-book-items {
@@ -47,6 +49,6 @@
 .details-book-rent {
   background-color: $wolox-blue;
   @extend %robotoBold;
-  @include book-text($white, #{$tiny-font-size+6});
+  @include book-text($white, #{$tiny-font-size + 6});
   width: 190px;
 }
