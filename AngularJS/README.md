@@ -7,8 +7,6 @@ Kickoff for web applications.
 + [Babel](https://babeljs.io/)
 + [Sass](http://sass-lang.com)
 + [Pug](https://pugjs.org)
-+ [Gulp](http://gulpjs.com/)
-+ [BrowserSync](http://www.browsersync.io/)
 + [ESLint](http://eslint.org/)
 
 ## First steps
@@ -18,20 +16,6 @@ Nvm approach is preferred. Also, you may find this [tool](https://github.com/wby
 
 #### Getting the dev dependencies
 Run `npm install` from rootpath of the project.
-
-#### Gulp. The right way
-During the project development you will probably use gulp every day, so let's use it in the right way.
-A very popular way of getting these kind of packages is simply tell npm to install them globally using the `-g` flag.
-That's needless as gulp is already included in this project dependencies. A big problem can have place if the version of the packages that were installed globally do not match the versions that each project require.
-The right way to execute these tools is using the binaries in the node_modules folder, that is `node_modules/.bin/`.
-To execute gulp just use the following in your terminal: `./node_modules/.bin/gulp`. The same applies for other dependencies that have command line tools.
-Adding an alias in your .bashrc/.bash_profile for these tools is highly recommended:
-```bash
-alias gulp='node_modules/.bin/gulp'
-```
-
-#### Gulp
-To start your app run `gulp` in the rootpath of the project. Then access your app at **localhost:port**. The port is logged in the console where you ran gulp.
 
 ## Development
 
@@ -71,10 +55,10 @@ To run these specs against your development environment, execute the following: 
 ## Deploy
 
 #### S3
-In order to deploy you must first create **config/aws.js** file with the credentials of the Amazon S3 bucket for each environment.
+In order to deploy you must first create **aws.js** file with the credentials of the Amazon S3 bucket for each environment.
 The file needs to have to follow the format specified in *config/aws.js.example*
 
-Then just run `gulp s3 --env <environment name>` with your desired env as parameter.
+Then just run `aws-deploy --env <environment name>` with your desired env as parameter.
 
 Finally, you need to add a custom routing rule so that s3 handles the 404 (or 403 depending or the bucket policy) to the s3 properties. In the **Static Website Hosting** panel, check the **Enable website hosting** option and complete the form with the following:
 ```

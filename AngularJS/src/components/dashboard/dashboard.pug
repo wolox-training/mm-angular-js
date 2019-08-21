@@ -1,0 +1,20 @@
+nav.nav
+  img.nav-logo(src="./../assets/wbooks_logo.svg", alt="Wolox")
+  .nav-items
+    img.nav-item(src="./../assets/notifications.svg", alt="notifications")
+    img.nav-item(src="./../assets/add_book.svg", alt="add_book")
+    img.nav-avatar(src="./../assets/avatar.png", alt="avatar")
+.container
+  form.book-search(ng-submit="$ctrl.filterBooks()")
+    select.custom-select(ng-model="$ctrl.filterType")
+      option(value="") Seleccionar filtro
+      option(value="title") Nombre
+      option(value="author") Autor
+    input.search-input(ng-model="$ctrl.filterValue", placeholder="Buscar...")
+    button.search-img(type="submit")
+  .book-list
+    .book(ng-repeat="book in $ctrl.filteredBooks")
+      a.link(ui-sref='bookDetails({ id: book.id })')
+        img.book-cover(ng-src="{{book.image_url}}")
+        span.book-title {{book.title}}
+        span.book-author {{book.author}}

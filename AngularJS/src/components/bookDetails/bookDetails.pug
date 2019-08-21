@@ -1,0 +1,14 @@
+a.back-button(ui-sref='home')
+  | < Volver
+.details-container
+  .details-book
+    img.details-book-img(ng-src="{{$ctrl.book.image_url}}")
+    span.details-book-title {{ $ctrl.book.title }}
+    span.details-book-items {{ $ctrl.book.author }}
+    span.details-book-items {{ $ctrl.book.year }}
+    span.details-book-items {{ $ctrl.book.genre }}
+    span.details-book-description
+      | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+      | incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+      | exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    button.details-book-rent Alquilar
