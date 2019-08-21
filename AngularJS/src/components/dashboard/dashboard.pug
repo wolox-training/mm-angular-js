@@ -3,7 +3,8 @@ nav.nav
   .nav-items
     img.nav-item(src="./../assets/notifications.svg", alt="notifications")
     img.nav-item(src="./../assets/add_book.svg", alt="add_book")
-    img.nav-avatar(src="./../assets/avatar.png", alt="avatar")
+    a(ui-sref='registration')
+      img.nav-avatar(src="./../assets/avatar.png", alt="avatar")
 .container
   form.book-search(ng-submit="$ctrl.filterBooks()")
     select.custom-select(ng-model="$ctrl.filterType")
@@ -14,7 +15,7 @@ nav.nav
     button.search-img(type="submit")
   .book-list
     .book(ng-repeat="book in $ctrl.filteredBooks")
-      a.link(ui-sref='bookDetails({ id: book.id })')
+      a(ui-sref='bookDetails({ id: book.id })')
         img.book-cover(ng-src="{{book.image_url}}")
         span.book-title {{book.title}}
         span.book-author {{book.author}}
