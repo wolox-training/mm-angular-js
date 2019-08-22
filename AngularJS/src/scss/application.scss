@@ -1,0 +1,25 @@
+@import '~wolox-equalizer/equalizer';
+
+@import 'variables/colors';
+
+@import 'variables/sizes';
+
+@import 'base';
+
+@import '../components/dashboard/dashboard';
+
+@import '../components/dashboard/navbar';
+
+@import '../components/registration/registration';
+
+@import '../components/bookDetails/bookDetails';
+
+
+* {
+  font-family: 'Roboto', serif, 400;
+}
+
+html,
+body {
+  height: 100%;
+}

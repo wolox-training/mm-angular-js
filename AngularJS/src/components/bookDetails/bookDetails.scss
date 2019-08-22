@@ -1,0 +1,54 @@
+.back-button {
+  margin: 10px;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  max-width: 800px;
+  width: 100%;
+}
+
+.details-book {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+  grid-template: 20px 40px 20px 20px auto 40px/200px 560px;
+  grid-template-areas: 'img title'
+  'img author'
+  'img year'
+  'img genre'
+  'img description'
+  'img rent';
+}
+
+.details-book-img {
+  background: $alto url('../assets/default_book.svg') no-repeat center;
+  grid-area: img;
+  height: 280px;
+  justify-self: center;
+  width: 190px;
+}
+
+.details-book-title {
+  @extend %robotoBold;
+  @include book-text($black, #{$tiny-font-size + 6});
+}
+
+.details-book-items {
+  @extend %robotoRegular;
+  @include book-text($tundora, #{$tiny-font-size + 2});
+}
+
+.details-book-description {
+  @extend %robotoRegular;
+  @include book-text($dusty-gray, #{$tiny-font-size});
+}
+
+.details-book-rent {
+  background-color: $wolox-blue;
+  @extend %robotoBold;
+  @include book-text($white, #{$tiny-font-size + 6});
+  width: 190px;
+}
