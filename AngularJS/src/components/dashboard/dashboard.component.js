@@ -5,9 +5,10 @@ angular.module('app-bootstrap').component('dashboard', {
   controller: ['bookService', function (bookService) {
     this.filterValue = '';
     this.filterType = '';
-    this.filterBooks = function() {
+    this.filterBooks = (event) => {
+      event.preventDefault();  
       this.filteredBooks = this.books.filter(book => book[this.filterType].toLowerCase().includes(this.filterValue.toLowerCase()));
-    };
+    }
     this.books = bookService.getBooks();
     this.filteredBooks = this.books;
   }]
