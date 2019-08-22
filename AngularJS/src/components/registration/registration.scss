@@ -9,6 +9,10 @@
   max-width: 100%;
   padding: 30px;
   width: 600px;
+
+  &.submitted .ng-invalid {
+    border: 1px solid #F00;
+  }
 }
 
 .login-text {

@@ -1,15 +1,21 @@
 .login-container
-  form.signup(name="userForm", ng-submit="$ctrl.sendForm()")
-    label.login-text Email
-    input.login-input(type="email", id="email", name="email", ng-model="$ctrl.user.email" required)
-    span.error(ng-show="userForm.email.$error.required") Email invalido!
-    label.login-text Contraseña
-    input.login-input(type="password", id="password", name="password", ng-model="$ctrl.user.password" required)
-    span.error(ng-show="userForm.password.$error.required") Contraseña invalida!
-    label.login-text Nombre
-    input.login-input(type="text", id="name", name="name", ng-model="$ctrl.user.name" required)
-    span.error(ng-show="userForm.name.$error.required") Nombre invalido!
-    label.login-text Apellido
-    input.login-input(type="text", id="lastname", name="lastname", ng-model="$ctrl.user.lastname" required)
-    span.error(ng-show="userForm.lastname.$error.required") Apellido invalido!
-    button.btn-login(type="submit") Registrarse
+  | {{$ctrl.error}}
+  form.signup(name="userForm" ng-class="{submitted:$ctrl.submitted}" ng-submit="$ctrl.createUser()" role="form")
+    label.login-text 
+      | Email
+    input.login-input(type="email" id="email" name="email" ng-model="$ctrl.user.email" required)
+    label.login-text 
+      | Contraseña
+    input.login-input(type="password", id="password", name="password", ng-model="$ctrl.user.password" pattern="(?=^.{8,52}$)(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*$" title="La contraseña debe tener entre 8 y 52 caracteres, y al menos una letra y un número" required)
+    label.login-text 
+      | Nombre
+    input.login-input(type="text" id="name" name="name" ng-model="$ctrl.user.name" ng-pattern="/^[a-zA-Z]*$/" required)
+    span.error(ng-show="$ctrl.submitted && userForm.name.$invalid") 
+      | El Nombre solo debe contener letras
+    label.login-text 
+      | Apellido
+    input.login-input(type="text" id="lastname" name="lastname" ng-model="$ctrl.user.lastname" ng-pattern="/^[a-zA-Z]*$/" required)
+    span.error(ng-show="$ctrl.submitted && userForm.lastname.$invalid") 
+      | El Apellido solo debe contener letras
+    button.btn-login(type="submit") 
+      | Registrarse
