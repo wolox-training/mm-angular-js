@@ -2,7 +2,7 @@ const angular = require('angular');
 
 angular.module('app-bootstrap').factory('userService', [
   function() {
-    var listUsers = [];
+    let listUsers = [];
     return {
       getUsers: () => listUsers,
       getUsersyId: (id) => listUsers.find(user => user.id === id),

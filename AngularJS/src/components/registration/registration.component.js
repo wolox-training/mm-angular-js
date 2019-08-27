@@ -10,12 +10,6 @@ angular.module('app-bootstrap').component('registration', {
       password: '',
       email: ''
     };
-    this.error = {
-      name: false,
-      lastname: false,
-      password: false,
-      email: false
-    };
     this.createUser = () => {
       this.submitted = true;
       userService.create(this.user);

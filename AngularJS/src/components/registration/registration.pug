@@ -1,21 +1,27 @@
-.login-container
-  | {{$ctrl.error}}
-  form.signup(name="userForm" ng-class="{submitted:$ctrl.submitted}" ng-submit="$ctrl.createUser()" role="form")
-    label.login-text 
-      | Email
-    input.login-input(type="email" id="email" name="email" ng-model="$ctrl.user.email" required)
-    label.login-text 
-      | Contraseña
-    input.login-input(type="password", id="password", name="password", ng-model="$ctrl.user.password" pattern="(?=^.{8,52}$)(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*$" title="La contraseña debe tener entre 8 y 52 caracteres, y al menos una letra y un número" required)
-    label.login-text 
-      | Nombre
-    input.login-input(type="text" id="name" name="name" ng-model="$ctrl.user.name" ng-pattern="/^[a-zA-Z]*$/" required)
-    span.error(ng-show="$ctrl.submitted && userForm.name.$invalid") 
-      | El Nombre solo debe contener letras
-    label.login-text 
-      | Apellido
-    input.login-input(type="text" id="lastname" name="lastname" ng-model="$ctrl.user.lastname" ng-pattern="/^[a-zA-Z]*$/" required)
-    span.error(ng-show="$ctrl.submitted && userForm.lastname.$invalid") 
-      | El Apellido solo debe contener letras
-    button.btn-login(type="submit") 
-      | Registrarse
+form.signup(name='userForm' ng-class='{submitted:$ctrl.submitted}' ng-submit='$ctrl.createUser()' role='form' novalidate)
+  label.login-text 
+    | Email
+  input.login-input(type='email' id='email' name='email' ng-model='$ctrl.user.email' ng-class='{ "frm-error-input" : userForm.email.$invalid && !userForm.email.$pristine }' required)
+  .frm-error-text(ng-show='userForm.email.$invalid && !userForm.email.$pristine')
+    | Email invalido
+  label.login-text 
+    | Contraseña
+  input.login-input(type='password' id='password' name='password' ng-class='{ "frm-error-input" : userForm.password.$invalid && !userForm.password.$pristine }' ng-model='$ctrl.user.password' ng-minlength='8' ng-maxlength='52' pattern='(?=.*\d)(?=.*[a-z]).*$' title='La contraseña debe tener entre 8 y 52 caracteres y al menos una letra y un número' required)
+  .frm-error-text(ng-show='userForm.password.$error.minlength')
+    | Contraseña muy corta, mínimo 8 caracteres
+  .frm-error-text(ng-show='userForm.password.$error.maxlength')
+    | Contraseña muy larga, máximo 52 caracteres
+  .frm-error-text(ng-show='userForm.password.$error.pattern')
+    | La contraseña debe tener al menos una letra y un número
+  label.login-text 
+    | Nombre
+  input.login-input(type='text' id='name' name='name' ng-model='$ctrl.user.name' ng-class='{ "frm-error-input" : userForm.name.$invalid && !userForm.name.$pristine }' ng-pattern='/^[a-zA-Z]*$/' required)
+  span.error(ng-show='userForm.name.$error.pattern') 
+    | El Nombre solo debe contener letras
+  label.login-text 
+    | Apellido
+  input.login-input(type='text' id='lastname' name='lastname' ng-model='$ctrl.user.lastname' ng-class='{ "frm-error-input" : userForm.lastname.$invalid && !userForm.lastname.$pristine }' ng-pattern='/^[a-zA-Z]*$/' required)
+  span.error(ng-show='userForm.lastname.$error.pattern') 
+    | El Apellido solo debe contener letras
+  button.btn-login(type='submit' ng-disabled='userForm.$invalid') 
+    | Registrarse

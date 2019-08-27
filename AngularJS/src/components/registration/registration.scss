@@ -1,7 +1,3 @@
-.login-container {
-  background-color: $alto;
-}
-
 .signup {
   display: flex;
   flex-direction: column;
@@ -9,10 +5,14 @@
   max-width: 100%;
   padding: 30px;
   width: 600px;
+}
 
-  &.submitted .ng-invalid {
-    border: 1px solid #F00;
-  }
+.frm-error-input {
+  border: 1px solid $red;
+}
+
+.frm-error-text {
+  color: $red;
 }
 
 .login-text {
@@ -34,7 +34,12 @@
   @extend %robotoBold;
   height: 40px;
   @include book-text($white, #{$tiny-font-size + 6});
+  margin: 20px;
   width: 175px;
+
+  &:disabled {
+    background-color: $anakiwa;
+  }
 }
 
 .error {
