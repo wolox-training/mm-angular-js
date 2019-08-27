@@ -1,16 +1,20 @@
 angular.module('app-bootstrap').config(['$stateProvider', '$urlRouterProvider',
   function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('home', {
+      .state('navbar.home', {
         url: '/',
         component: 'dashboard'
-      }).state('bookDetails',
+      }).state('navbar.bookDetails',
       {
         url: '/bookDetails',
         params: {
           id: null
         },
         component: 'bookDetails'
+      }).state('navbar', {
+        url: '',
+        component: 'navbar',
+        abstract: true
       }).state('registration',
       {
         url: '/registration',

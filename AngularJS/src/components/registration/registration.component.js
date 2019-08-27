@@ -13,7 +13,7 @@ angular.module('app-bootstrap').component('registration', {
     this.createUser = () => {
       this.submitted = true;
       userService.create(this.user);
-      $state.transitionTo('home');
+      $state.transitionTo('navbar.home');
     };
   }]
 });

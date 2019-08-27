@@ -1,10 +1,3 @@
-nav.nav
-  img.nav-logo(src='./../assets/wbooks_logo.svg' alt='Wolox')
-  .nav-items
-    img.nav-item(src='./../assets/notifications.svg' alt='notifications')
-    img.nav-item(src='./../assets/add_book.svg' alt='add_book')
-    a(ui-sref='registration')
-      img.nav-avatar(src='./../assets/avatar.png' alt='avatar')
 .container
   form.book-search(ng-submit='$ctrl.filterBooks($event)')
     select.custom-select(ng-model='$ctrl.filterType')
@@ -18,7 +11,7 @@ nav.nav
     button.search-img(type='submit')
   .book-list
     .book(ng-repeat='book in $ctrl.filteredBooks')
-      a(ui-sref='bookDetails({ id: book.id })')
+      a(ui-sref='navbar.bookDetails({ id: book.id })')
         img.book-cover(ng-src='{{book.image_url}}')
         span.book-title
           | {{book.title}}
