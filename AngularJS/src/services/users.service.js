@@ -5,7 +5,7 @@ angular.module('app-bootstrap').service('userService', [
       return httpService.post('api/v1/users/', { user: user });
     };
     this.login = (user) => {
-      return httpService.post('api/v1/users/sessions/', { authentication: user });
+      return httpService.post('api/v1/users/sessions/', { session: user });
     };
   }
 ]);

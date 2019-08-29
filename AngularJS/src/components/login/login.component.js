@@ -3,6 +3,7 @@ const angular = require('angular');
 angular.module('app-bootstrap').component('login', {
   template: require('./login.pug')(),
   controller: ['userService', 'sessionService', '$state', function (userService, sessionService, $state) {
+    this.loginAuthError = false;
     this.user = {
       password: '',
       email: ''

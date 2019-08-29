@@ -13,7 +13,7 @@ angular.module('app-bootstrap').component('navbar', {
     this.filteredBooks = this.books;
     this.logout = () => {
       sessionService.deleteUserInfo();
-      $state.transitionTo('registration');
+      $state.transitionTo('login');
       this.isLogged = false;
     };
   }]
