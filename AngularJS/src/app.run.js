@@ -1,12 +1,12 @@
 angular.module('app-bootstrap').run([
-'$transitions', 'sessionService',
+  '$transitions', 'sessionService',
   function ($transitions, sessionService) {
     $transitions.onBefore({}, function(transition) {
       if (transition.to().data.requireLogin && !sessionService.loginState()) {
-        return transition.router.stateService.target('registration');
+        return transition.router.stateService.target('login');
       } else if (!transition.to().data.requireLogin && sessionService.loginState()) {
         return transition.router.stateService.target('navbar.home');
       }
     });
-  }    
+  }
 ]);

@@ -30,3 +30,5 @@ form.signup(name='signupForm' ng-submit='$ctrl.createUser(signupForm.$valid)' ro
     | El Apellido solo debe contener letras
   button.btn-login(type='submit' ng-disabled='signupForm.$invalid') 
     | Registrarse
+  a(ui-sref='login')
+    | Ya tengo cuenta

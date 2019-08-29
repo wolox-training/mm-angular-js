@@ -28,6 +28,13 @@ angular.module('app-bootstrap').config(['$stateProvider', '$urlRouterProvider',
         data: {
           requireLogin: false
         }
+      }).state('login',
+      {
+        url: '/login',
+        component: 'login',
+        data: {
+          requireLogin: false
+        }
       });
     $urlRouterProvider.otherwise('/');
   }

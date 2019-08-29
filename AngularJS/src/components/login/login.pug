@@ -1,4 +1,4 @@
-form.login(name='loginForm' ng-submit='$ctrl.login(loginForm.$valid)' role='form' novalidate)
+form.signup(name='loginForm' ng-submit='$ctrl.login(loginForm.$valid)' role='form' novalidate)
   label.login-text 
     | Email
   input.login-input(type='email' id='email' name='email' ng-model='$ctrl.user.email' ng-class='{ "frm-error-input" : loginForm.email.$invalid && !loginForm.email.$pristine }' required)
@@ -7,5 +7,7 @@ form.login(name='loginForm' ng-submit='$ctrl.login(loginForm.$valid)' role='form
   label.login-text 
     | Contraseña
   input.login-input(type='password' id='password' name='password' ng-class='{ "frm-error-input" : loginForm.password.$invalid && !loginForm.password.$pristine }' ng-model='$ctrl.user.password' ng-minlength='8' ng-maxlength='52' pattern='(?=.*\d)(?=.*[a-z]).*$' required)
-    button.btn-login(type='submit' ng-disabled='loginForm.$invalid') 
+  button.btn-login(type='submit' ng-disabled='loginForm.$invalid') 
     | Iniciar Sesion
+  a(ui-sref='registration')
+    | ¿No tienes cuenta? Click aquí

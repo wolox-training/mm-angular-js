@@ -9,7 +9,7 @@ angular.module('app-bootstrap').component('login', {
     };
     this.login = (validForm) => {
       if (validForm) {
-        userService.create(this.user)
+        userService.login(this.user)
         .then((response) => {
           sessionService.setUserInfo(response.data);
           $state.transitionTo('navbar.home');

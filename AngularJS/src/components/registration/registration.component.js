@@ -17,11 +17,6 @@ angular.module('app-bootstrap').component('registration', {
         .then((response) => {
           sessionService.setUserInfo(response.data);
           $state.transitionTo('navbar.home');
-        })
-        .catch((erro) => {
-          if (erro.status === 401) {
-            this.loginAuthError = true;
-          }
         });
       }
     };
