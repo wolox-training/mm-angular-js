@@ -19,7 +19,7 @@ const entryFiles = glob
 module.exports = {
   entry: {
     ...entryFiles,
-    vendor: ['angular']
+    vendor: []
   },
   output: {
     path: path.resolve(__dirname, 'build')
