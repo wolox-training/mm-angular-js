@@ -1,20 +1,40 @@
 angular.module('app-bootstrap').config(['$stateProvider', '$urlRouterProvider',
   function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('home', {
+      .state('navbar.home', {
         url: '/',
-        component: 'dashboard'
-      }).state('bookDetails',
+        component: 'dashboard',
+        data: {
+          requireLogin: true
+        }
+      }).state('navbar.bookDetails',
       {
         url: '/bookDetails',
+        data: {
+          requireLogin: true
+        },
         params: {
           id: null
         },
         component: 'bookDetails'
+      }).state('navbar', {
+        url: '',
+        component: 'navbar',
+        abstract: true
       }).state('registration',
       {
         url: '/registration',
-        component: 'registration'
+        component: 'registration',
+        data: {
+          requireLogin: false
+        }
+      }).state('login',
+      {
+        url: '/login',
+        component: 'login',
+        data: {
+          requireLogin: false
+        }
       });
     $urlRouterProvider.otherwise('/');
   }

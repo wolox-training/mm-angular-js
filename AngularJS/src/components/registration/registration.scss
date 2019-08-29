@@ -1,8 +1,52 @@
-.frontend-bootstrap-component-two {
-  text-decoration: underline;
+.signup {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  max-width: 100%;
+  padding: 30px;
+  width: 600px;
 }
 
-.link {
-  color: $wolox-blue;
-  padding: 0 5px;
+.frm-error-input {
+  border: 1px solid $red;
+}
+
+.frm-error-text {
+  color: $red;
+}
+
+.login-text {
+  @extend %robotoRegular;
+  height: 20px;
+  @include book-text($black, $tiny-font-size);
+  margin-top: 30px;
+}
+.login-input {
+  background-color: $wild-sand;
+  @extend %robotoItalic;
+  height: 40px;
+  margin: 10px 0;
+}
+
+.btn-login {
+  align-self: center;
+  background-color: $wolox-blue;
+  @extend %robotoBold;
+  height: 40px;
+  @include book-text($white, #{$tiny-font-size + 6});
+  margin: 20px;
+  width: 175px;
+
+  &:disabled {
+    background-color: $anakiwa;
+  }
+}
+
+.error {
+  color: $red;
+}
+
+.finalMessage {
+  align-self: center;
+  margin: 10px 0;
 }

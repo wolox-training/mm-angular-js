@@ -1,6 +1,34 @@
-.frontend-bootstrap-component-two
-  | {{ $ctrl.component2Phrase }}
-.frontend-bootstrap-component-two
-  | {{ 'COMPO2.TITLE' | translate }}
-a.link(ui-sref='component1')
-  | Go to state1
+form.signup(name='signupForm' ng-submit='$ctrl.createUser(signupForm.$valid)' role='form' novalidate)
+  label.login-text 
+    | Email
+  input.login-input(type='email' id='email' name='email' ng-model='$ctrl.user.email' ng-class='{ "frm-error-input" : signupForm.email.$invalid && !signupForm.email.$pristine }' required)
+  .frm-error-text(ng-show='signupForm.email.$invalid && !signupForm.email.$pristine')
+    | Email invalido
+  label.login-text 
+    | Contraseña
+  input.login-input(type='password' id='password' name='password' ng-class='{ "frm-error-input" : signupForm.password.$invalid && !signupForm.password.$pristine }' ng-model='$ctrl.user.password' ng-minlength='8' ng-maxlength='52' pattern='(?=.*\d)(?=.*[a-z]).*$' required)
+  .frm-error-text(ng-show='signupForm.password.$error.minlength')
+    | Contraseña muy corta, mínimo 8 caracteres
+  .frm-error-text(ng-show='signupForm.password.$error.maxlength')
+    | Contraseña muy larga, máximo 52 caracteres
+  .frm-error-text(ng-show='signupForm.password.$error.pattern')
+    | La contraseña debe tener al menos una letra y un número
+  label.login-text 
+    | Vuelva a introducir la contraseña
+  input.login-input(type='password' id='password_confirmation' name='password_confirmation' ng-class='{ "frm-error-input" : signupForm.password.$modelValue != signupForm.password_confirmation.$modelValue && !signupForm.password_confirmation.$pristine }' ng-model='$ctrl.user.password_confirmation' ng-minlength='8' ng-maxlength='52' pattern='(?=.*\d)(?=.*[a-z]).*$' required)
+  .frm-error-text(ng-show='signupForm.password.$modelValue != signupForm.password_confirmation.$modelValue')
+    | Las contraseñas no coinciden
+  label.login-text 
+    | Nombre
+  input.login-input(type='text' id='first_name' name='first_name' ng-model='$ctrl.user.first_name' ng-class='{ "frm-error-input" : signupForm.first_name.$invalid && !signupForm.first_name.$pristine }' ng-pattern='/^[a-zA-Z]*$/' required)
+  span.error(ng-show='signupForm.first_name.$error.pattern') 
+    | El Nombre solo debe contener letras
+  label.login-text 
+    | Apellido
+  input.login-input(type='text' id='last_name' name='last_name' ng-model='$ctrl.user.last_name' ng-class='{ "frm-error-input" : signupForm.last_name.$invalid && !signupForm.last_name.$pristine }' ng-pattern='/^[a-zA-Z]*$/' required)
+  span.error(ng-show='signupForm.last_name.$error.pattern') 
+    | El Apellido solo debe contener letras
+  button.btn-login(type='submit' ng-disabled='signupForm.$invalid') 
+    | Registrarse
+  a.finalMessage(ui-sref='login')
+    | Ya tengo cuenta

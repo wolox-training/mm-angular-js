@@ -1,0 +1,15 @@
+form.signup(name='loginForm' ng-submit='$ctrl.login(loginForm.$valid)' role='form' novalidate)
+  label.login-text 
+    | Email
+  input.login-input(type='email' id='email' name='email' ng-model='$ctrl.user.email' ng-class='{ "frm-error-input" : $ctrl.loginAuthError }' required)
+  .frm-error-text(ng-show='loginForm.email.$invalid && !loginForm.email.$pristine')
+    | Email invalido
+  label.login-text 
+    | Contraseña
+  input.login-input(type='password' id='password' name='password' ng-class='{ "frm-error-input" : $ctrl.loginAuthError }' ng-model='$ctrl.user.password' ng-minlength='8' ng-maxlength='52' pattern='(?=.*\d)(?=.*[a-z]).*$' required)
+  .frm-error-text(ng-show='$ctrl.loginAuthError')
+    | Email o contraseña incorrecto
+  button.btn-login(type='submit' ng-disabled='loginForm.$invalid') 
+    | Iniciar Sesion
+  a.finalMessage(ui-sref='registration')
+    | ¿No tienes cuenta? Click aquí
