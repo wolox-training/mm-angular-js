@@ -18,11 +18,6 @@ angular.module('app-bootstrap').component('registration', {
           sessionService.setUserInfo(response.data);
           $state.transitionTo('navbar.home');
         })
-        .catch((erro) => {
-          if (erro.status === 401) {
-            this.loginAuthError = true;
-          }
-        });
       }
     };
   }]
