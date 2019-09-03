@@ -2,7 +2,23 @@ const angular = require('angular');
 
 angular.module('app-bootstrap').component('registration', {
   template: require('./registration.pug')(),
-  controller: [function () {
-    this.component2Phrase = 'This is registration 2';
+  controller: ['userService', 'sessionService', '$state', function (userService, sessionService, $state) {
+    this.user = {
+      first_name: '',
+      last_name: '',
+      password: '',
+      password_confirmation: '',
+      email: '',
+      locale: 'es'
+    };
+    this.createUser = (validForm) => {
+      if (validForm) {
+        userService.create(this.user)
+        .then((response) => {
+          sessionService.setUserInfo(response.data);
+          $state.transitionTo('navbar.home');
+        })
+      }
+    };
   }]
 });
